@@ -16,20 +16,18 @@ static public long factorial(int n) {
  * @return a ^ b
  * requirements:
  * 1. No cycles
- *  
  * 2. Only  arithmetic operations either + or -
  * 3. Additional methods (no standard) should apply the #1 and #2 requirements
  * 4. No additional static field
  */
 static public long pow (int a, int b) {
-//	if (b < 0) {
-//		throw new IllegalArgumentException(" power can't be a negative");
-//	}
-//	if (b == 0) {
-//		return 1;
-//	}
-//	return a * pow(a, b - 1);
-	//TODO according to the requirements 
+	if (b < 0) {
+		throw new IllegalArgumentException(" power can't be a negative");
+	}
+	if (b == 0) {
+		return 1;
+	}
+	// TODO
 	return 0;
 }
 
@@ -57,7 +55,12 @@ private static long sum(int firstIndex, int[] array) {
  * 4. No static fields
  */
 public static int square(int x) {
-	// TODO Auto-generated method stub
-	return 0;
+	if(x < 0) {
+		return square(- x);
+	}
+	if(x == 1) {
+		return 1;
+	}
+	return square(x - 1) + (x + x - 1);
 }
 }
